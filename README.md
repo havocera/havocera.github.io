@@ -1,126 +1,72 @@
-# Space Jekyll
+## My Stack Problems
 
-A simple and elegant Jekyll theme based on Spacemacs. The theme works well on mobile devices as well.
+> This project forked and has been modified from [A simple grey theme for Jekyll](https://github.com/liamsymonds/simplygrey-jekyll),
+> and the search posts using [Super Search](https://github.com/chinchang/super-search)
 
-See a live demo [here](https://victorvoid.github.io/space-jekyll-template/).
+### Demo
+* [https://agusmakmun.github.io](https://agusmakmun.github.io)
 
-![](https://github.com/victorvoid/space-jekyll-template/blob/master/screenshot.png?raw=true)
+#### Features
 
-# Site/User Settings
+* Sitemap and XML Feed
+* Pagination in homepage
+* Posts under category
+* Realtime Search Posts _(title & description)_ by query.
+* Related Posts
+* Highlight pre
+* Next & Previous Post
+* Disqus comment
+* Projects page & Detail Project page
+* Share on social media
+* Google analytics
+* HTML Minify _(Compress HTML)_ using [Jekyll Compress HTML](https://github.com/penibelst/jekyll-compress-html)
 
-customize your site in ``_config.yml``
+#### Screenshot
 
-```ruby
+![Screenshot Post Page](https://raw.githubusercontent.com/agusmakmun/agusmakmun.github.io/master/static/img/screenshot-post-page.png  "Screenshot Post Page")
 
-# Site settings
-description: A blog about lorem ipsum
-baseurl: "" # the subpath
-url: "" # the base hostname &/|| protocol for your site
+### Install & Configuration
 
-# User settings
-username: Lorem Ipsum
-user_description: Lorem Developer
-user_title: Lorem Ipsum
-email: lorem@ipsum.com
-twitter_username: loremipsum
-github_username:  loremipsum
-gplus_username:  loremipsum
-disqus_username: loremipsum
+1. Fork this repository
+2. Edit site settings inside file of `_config.yml`
+3. Edit your projects at file of `projects.md`, `_data/projects.json` and inside path of `_project/` _(for detail project)_.
+4. Edit about yourself inside file of `about.md`
+
+### How to Use?
+
+**a. Add new Category**
+
+All categories saved inside path of `category/`, you can see the existed categories.
+
+**b. Add new Posts**
+
+* All posts bassed on markdown syntax _(please googling)_. allowed extensions is `*.markdown` or `*.md`.
+* This files can found at the path of `_posts/`.
+* and the name of files are following `<date:%Y-%m-%d>-<slug>.<extension>`, for example:
 
 ```
+2013-09-23-welcome-to-jekyll.md
 
-See more about project and links in [_config.yml](./_config.yml)
+# or
 
-## How to create a post ?
+2013-09-23-welcome-to-jekyll.markdown
+```
 
-_posts create a file .md with structure:
+Inside the file of it,
 
-```md
+```
 ---
-layout: post
-title: "Lorem ipsum speak.."
-date: 2016-09-13 01:00:00
-image: '/assets/img/post-image.png'
-description: 'about tech'
-tags:
-- lorem
-- tech
-categories:
-- Lorem ipsum
-twitter_text: 'How to speak with Lorem'
+layout: post                          # (require) default post layout
+title: "Your Title"                   # (require) a string title
+date: 2016-04-20 19:51:02 +0700       # (require) a post date
+categories: [python, django]          # (custom) some categories, but makesure these categories already exists inside path of `category/`
+tags: [foo, bar]                      # (custom) tags only for meta `property="article:tag"`
+image: Broadcast_Mail.png             # (custom) image only for meta `property="og:image"`, save your image inside path of `static/img/_posts`
 ---
+
+# your content post with markdown syntax goes here...
 ```
 
-## How to insert new links on menu navigation ?
+### Contributing
 
-![](https://github.com/victorvoid/space-jekyll-template/blob/master/src/img/menu.png)
-
-You should open `_config.yml` and change/add `links` section:
-
-```yaml
-links:
-  section_1: # you can use any name
-    - title: home # show on menu
-      url: / #link
-      key_trigger: 1 # link shortcut and show on the left of the title
-    - title: my posts
-      url: /posts
-      key_trigger: 2
-    - title: series
-      url: /series
-      key_trigger: 3
-    - title: tags
-      url: /tags
-      key_trigger: 4
-    - title: about me
-      url: /about
-      key_trigger: 5
-```
-
-Frontend Technologies
----------------------
-* [Gulp](https://gulpjs.com/): The streaming build system.
-* [Stylus](http://stylus-lang.com/): expressive, dynamic, robust CSS.
-* [BrowserSync](https://www.browsersync.io/): Time-saving synchronised browser testing.
-* [Rupture](https://github.com/jescalan/rupture): Simple media queries for stylus.
-* [Kouto-Swiss](http://kouto-swiss.io/): A complete CSS framework for Stylus.
-* [Jeet](http://jeet.gs/): A grid system for human.
-* [Zepto.js](http://zeptojs.com/): The aerogel-weight jQuery-compatible JavaScript library.
-
-## How can I modify the theme ?
-
-First, install [jekyll](https://jekyllrb.com/) and [node.js](https://nodejs.org/).
-
-1. Fork the theme with your username, example: `charlie.github.io`
-2. Clone repository to your computer
-3. run `npm install`
-4. run `gulp`
-5. Be happy by modifying the files
-
-**Space Jekyll** uses the [Stylus](http://stylus-lang.com/) to process his css, then modifies the style of the theme in [this folder](https://github.com/victorvoid/space-jekyll-template/tree/master/src/styl).
-
-You can go in the [variable.styl](https://github.com/victorvoid/space-jekyll-template/blob/master/src/styl/_variables.styl) and modify the colors. 
-
-
-## License
-The MIT License (MIT)
-
-Copyright (c) 2016 Victor Igor
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Feel free to [open a bug](https://github.com/agusmakmun/agusmakmun.github.io/issues) or [contribute to code](https://github.com/agusmakmun/agusmakmun.github.io/pulls)!
